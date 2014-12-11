@@ -1,5 +1,5 @@
 import java.util.Arrays;
-//Descending order
+//Bubble Sort Algorithm in Descending order
 public class BubbleSortDescending
 {
 	public static void bubble_sort(int[] data)
