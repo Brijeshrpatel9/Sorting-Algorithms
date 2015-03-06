@@ -49,7 +49,7 @@ public class MergeSort {
 		merge_sort(data);
 		System.out.println("Sorterd Array by Merge Sort: ");
 		for(int i:data){
-	        System.out.print(i);
+	        	System.out.print(i);
 	        System.out.print(" ");
 		}
 	}
