@@ -4,24 +4,24 @@ public class MergeSort {
 
 	public static void merge_sort(int[] a)
 	{
-		int[] tempA = new int[a.length];
-		merge_sort(a, tempA, 0, a.length - 1);
+		int[] tempArray = new int[a.length];
+		merge_sort(a, tempArray, 0, a.length - 1);
 	}
 	
-	public static void merge_sort(int[] a, int[] tempA, int left, int right)
+	public static void merge_sort(int[] a, int[] tempArray, int left, int right)
 	{
 		if(left < right)
 		{
 			int center = (left + right)/2;
-			merge_sort(a, tempA, left, center);
-			merge_sort(a, tempA, center+1, right);
+			merge_sort(a, tempArray, left, center);
+			merge_sort(a, tempArray, center+1, right);
 			System.out.print(Arrays.toString(a));
 			System.out.println("");
-			merge(a, tempA, left, center+1, right);
+			merge(a, tempArray, left, center+1, right);
 		}
 	}
 	
-	public static void merge(int[] a, int[] tempA, int leftPos, int rightPos, int rightEnd)
+	public static void merge(int[] a, int[] tempArray, int leftPos, int rightPos, int rightEnd)
 	{
 		int leftEnd = rightPos-1;
 		int tmpPos = leftPos;
@@ -29,16 +29,16 @@ public class MergeSort {
 		while(leftPos <= leftEnd && rightPos <= rightEnd)
 		{
 			if(a[leftPos] <= a[rightPos])
-				tempA[tmpPos++] = a[leftPos++];
+				tempArray[tmpPos++] = a[leftPos++];
 			else
-				tempA[tmpPos++] = a[rightPos++];
+				tempArray[tmpPos++] = a[rightPos++];
 		}
 		while(leftPos <= leftEnd)
-			tempA[tmpPos++] = a[leftPos++];
+			tempArray[tmpPos++] = a[leftPos++];
 		while(rightPos <= rightEnd)
-			tempA[tmpPos++] = a[rightPos++];
+			tempArray[tmpPos++] = a[rightPos++];
 		for(int i = 0; i < numElements; i++, rightEnd--)
-			a[rightEnd] = tempA[rightEnd];
+			a[rightEnd] = tempArray[rightEnd];
 			
 		
 	}
